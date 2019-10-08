@@ -12,6 +12,8 @@ from linebot.models import (
 
 from bs4 import BeautifulSoup
 
+import requests
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('/PT8n0GdwXKZGZ+5RStOYF5+Q7KUT3psTYWpBvH9Pzan3mL1HA1dGNG7nEcNUh3nGkccI7uNZcyl+Nucfy7o+CPTQ6nCtS33Z8S/a4BxiM6xJ4fP4RABqOtJlgYeJwQfeXzRoZZEbIYp8xRThdpVGwdB04t89/1O/w1cDnyilFU=')

@@ -10,7 +10,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-from bs4 import BeautifulSoup4
+from bs4 import BeautifulSoup
 
 import requests
 

@@ -1,6 +1,6 @@
 line-bot-sdk
 gunicorn
 flask
-Flask
+flask_httpauth
 BeautifulSoup4
-requests
+request

@@ -10,11 +10,34 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+from bs4 import BeautifulSoup
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('/PT8n0GdwXKZGZ+5RStOYF5+Q7KUT3psTYWpBvH9Pzan3mL1HA1dGNG7nEcNUh3nGkccI7uNZcyl+Nucfy7o+CPTQ6nCtS33Z8S/a4BxiM6xJ4fP4RABqOtJlgYeJwQfeXzRoZZEbIYp8xRThdpVGwdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('9354d812fc706d0790a89721d1552345')
 
+liss = []
+p = 0
+
+while p < 34:
+    p = p + 1
+    url = 'https://www.austin.com.tw/products.php?func=p_list&pc_parent=0&nowp=' + str(p)
+
+    resp = requests.get(url)
+
+    soup = BeautifulSoup(resp.text, 'html5lib')
+        
+    goods = soup.find_all('div', 'info')
+        
+
+    for good in goods:
+        title = good.find('span', 'product-brand').text.strip()
+        product_name = good.find('span', 'product-type').text.strip()
+        price = good.find('span', 'product-price sale').text.strip()
+        lis = (title, product_name, price)
+
+        liss.append(lis)
 
 @app.route("/callback", methods=['POST'])
 def callback():

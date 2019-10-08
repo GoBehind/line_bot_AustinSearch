@@ -3,3 +3,4 @@ gunicorn
 flask
 Flask
 BeautifulSoup4
+requests

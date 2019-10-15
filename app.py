@@ -10,11 +10,6 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-import sys
-
-reload(sys)
-
-sys.setdefaultencoding('utf-8')
 
 from bs4 import BeautifulSoup
 

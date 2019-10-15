@@ -4,3 +4,5 @@ flask
 flask_httpauth
 BeautifulSoup4
 request
+sys
+html5lib
